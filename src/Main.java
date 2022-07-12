@@ -1,22 +1,18 @@
-import java.lang.reflect.Array;
+import com.day3.test1.*;
 
 public class Main {
 
-    static void func(){
-
-    }
-
     public static void main(String[] args) {
-        int a[] = {1,2,3};
-        printArr(a);
-    }
+        //System.out.println("args = " + Arrays.deepToString(args));
+        Car c = new Car();
+        System.out.println("c = " + c);
 
-    private static void printArr(int[] a) {
-        for (int el:
-                a) {
-            System.out.print(el + " ");
-        }
-    }
+        Test1 t = new Test1();
+        System.out.println("t.A = " + t.A);
+        t.sayHello();
 
+//        Boolean b = Boolean.TRUE;
+
+    }
 
 }
