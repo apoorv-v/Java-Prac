@@ -1,7 +1,7 @@
-package com.day4;
+package com.local;
 
 public class ExceptionHandling {
-    public  void  SayHi (){
+    public  void  SayHi () throws MyExp{
         throw new MyExp("What the hell");
     }
 }

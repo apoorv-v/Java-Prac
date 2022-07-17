@@ -1,4 +1,4 @@
-package com.day4;
+package com.local;
 
 public class MyExp extends RuntimeException {
     MyExp(String message) {

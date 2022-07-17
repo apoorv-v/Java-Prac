@@ -1,4 +1,5 @@
-package com.day3.test1;
+package com.local;
+
 
 public class Test1 {
     public int A = 1;
@@ -8,4 +9,5 @@ public class Test1 {
     void sayBye(){
         System.out.println("Bye from Test1");
     }
+
 }
