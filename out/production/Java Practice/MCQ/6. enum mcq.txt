@@ -1,0 +1,96 @@
+Q1 of 4
+Predict the output of the following code.
+
+public class Tester {
+    public enum Test { A, B, C }
+
+    public static void main(String args[]) {
+        checkTest(Test.A);
+    }
+
+    public static void checkTest(Test test) {
+        switch(test) {
+    case A:
+     System.out.println(Test.A.equals(Test.B));  // false
+    case B:
+     System.out.println(Test.B.equals(Test.B));  // true
+    case C:
+     System.out.println(Test.C == Test.C);
+        }
+    }
+}
+ 
+
+false
+false true false
+false true true  #
+Q2 of 4
+What will be the output of the following code ?
+ 
+
+public class Tester
+{
+	public enum Enums
+	{
+	    FIRST, SECOND, THIRD;
+	}
+   public static void main(String[] args)
+   {
+       Enums[] myEnums = new Enums[3];
+  
+       for (int i = 0; i < myEnums.length; i++)
+       {
+           System.out.println(myEnums[i]);
+       }
+   }
+}
+ 
+
+FIRST SECOND THIRD
+null null null   #
+enum address values
+None of the above
+Q3 of 4
+Find the output of the code given below.
+
+public class Tester
+{	
+	public enum Enums
+	{
+	    FIRST, SECOND, THIRD;
+	}
+   public static void main(String[] args)
+   {
+	   for(Enums e:Enums.values()) {
+		String enum1 =e.toString()=="FIRST" ? "Yes":"No";
+		String enum2 =e.toString()=="THIRD" ? "Yes":"No";
+		System.out.println(enum1+" "+enum2);
+			  }
+		   }	   
+}
+ 
+
+Compilation Error: cannot convert enum to string Line1
+Yes No    No No    No Yes  #
+Yes Yes
+None of the above
+Q4 of 4
+What should be added in the blank, to get the output as "see" ?
+
+class Test{
+	public enum show{
+		see,saw;
+	}
+}
+public class Tester{
+	public static void main(String[] args) {
+		Test.show value =_________;
+		System.out.println(value);
+	}
+}
+ 
+
+new Test().show.see
+Test.show.see
+show.see
+

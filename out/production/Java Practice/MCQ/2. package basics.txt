@@ -1,0 +1,37 @@
+Q1 
+Which of the following can be valid package names?
+
+(Choose two options)
+
+com.training.validator        #
+Validator123
+Validator
+validator #
+com.training.Validator
+
+
+Q2
+Tom has created a package having name "application" with class "Customer" which has a public instance variable "customerName". 
+
+How can you access "customerName" in a different package?
+
+import Customer;
+import Customer.customerName;
+import application.Customer; #
+No need to import as "customerName" is a public instance variable
+
+
+Q3 
+A package "package1" has a class "Student" which has a protected instance variable "contactNo". Can it be accessible in a class "RegularStudent", a child class of "Student" present in a package "package2"?
+
+Yes #
+No
+
+
+Q4 
+Where can, a default variable declared inside a package, be accessible?
+
+Only in the same class # av
+Only in the same package # anunay
+In the same package and sub-classes of different package
+In the same as well as different packages

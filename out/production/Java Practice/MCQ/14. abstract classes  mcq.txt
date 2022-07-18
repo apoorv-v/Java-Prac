@@ -1,0 +1,247 @@
+Q1 of 12
+Which of the following statement is TRUE?
+
+Interface can have static, default, abstract methods.
+Interface can have static, final, abstract method.
+Interface can only have default and abstract method.
+Interface can only have abstract method
+Q2 of 12
+Which of the methods in the following code CANNOT be overriden in the Table class ?
+
+interface Furniture{
+	default void checkStock() {
+		System.out.println("Present in Stock");
+	}
+	static void pack() {
+		System.out.println("Ready");
+	}
+	void shop();
+	static void checkQuality() {
+		System.out.println("Checking");
+	}
+	default void bill(){
+		System.out.println("Billing");
+	}
+}
+public class Table implements Furniture{
+}
+
+ 
+
+checkStock(), shop(), bill()
+pack(), checkQuality()
+checkStock(), bill()
+shop()
+Q3 of 12
+Observe the following code and choose the CORRECT option:
+
+interface Lab { 
+    public abstract void experiment1();
+    public abstract void experiment2();
+} 
+class Tester implements Lab{ 
+	@Override
+	public void experiment1() {
+		System.out.println("Eureka");
+	}
+	@Override
+	public void experiment2() {
+		System.out.println("Bazinga");
+	}
+    public static void main(String args[]){
+ 	 	Tester obj = new Tester();
+    	obj.experiment1();
+    } 
+}	
+
+Error as an Interface cannot have two abstract methods
+Bazinga
+Eureka
+Q4 of 12
+Observe the following code and predict the OUTPUT: 
+
+interface Stationery{
+	int quantity=1;
+}
+class Pen implements Stationery{
+	String color="Green";
+}
+public class User {
+	public static void main(String[] args) {
+		Stationery obj=new Pen();   
+		System.out.println(obj.color);  //line1
+	}
+}
+ 
+
+Green
+Error in line1 as child class instance variables are not accessible due to Dynamic Binding
+Q5 of 12
+Which of the following method should be overridden in class Table for the output to display, Success?
+
+interface Furniture{
+	default void checkStock() {
+		System.out.println("Present in Stock");
+	}
+	static void pack() {
+		System.out.println("Ready");
+	}
+	void shop();
+	static void checkQuality() {
+		System.out.println("Checking");
+	}
+	default void bill(){
+		System.out.println("Billing");
+	}
+}
+public class Table implements Furniture{
+    public static void main(String args[]) {
+        System.out.println("Success");
+    }
+}
+ 
+
+checkStock(), bill()
+checkSize(),pack()
+shop()
+Q6 of 12
+Which of the following statements are FALSE?
+
+(Choose any two correct options)
+
+An Interface can extend from only one interface.
+A class can extend from another class and at the same time implement any number of interfaces.
+A class can extend multiple abstract classes.
+Many classes can implement the same Interface.
+Q7 of 12
+Observe the following code and choose the CORRECT option:
+
+interface Engine{
+    default void calculateHP() {
+        System.out.println("Calculating");
+    }    
+}
+interface TwoStrokeEngine extends Engine{
+    int numberOfStrokes=2;
+    default void calculateHP() {
+        System.out.println("Calculating HP Of Two Stroke Engine");
+    }    
+}
+public class RepairCentre implements Engine,TwoStrokeEngine {
+    public static void main(String[] args) {
+        RepairCentre obj = new RepairCentre();
+        obj.calculateHP();
+    }
+}
+ 
+
+Calculating
+Calculating HP Of Two Stroke Engine
+Error due to same methods in both the implemented Interfaces
+Q8 of 12
+Select the CORRECT option among the following:
+
+Data fields in an Interface are implicitly public with default scope and final.
+Data fields in an Interface are implicitly public, static and final.
+Data fields in an Interface are implicitly private, static and final
+Data fields in an Interface are implicitly protected, static and final
+Q9 of 12
+Observe the following code : 
+
+interface Game{                 
+	void display();             //line2
+}
+public class VideoGame implements Game{
+	@Override
+	public void display() {
+		System.out.println("Display Method");
+	}
+    public static void main(String[] args) {
+        VideoGame game = new VideoGame();
+        game.display();          //line3
+    }
+}
+Choose the correct option from the following :
+
+The code will execute successfully
+Error in line2 as display() method does not have a body
+Error in line2 as abstract keyword is not used to declare the method
+Error in line3 as the display method cannot be invoked using the VideoGame object
+Q10 of 12
+Consider the following code,
+
+interface Car{
+	default void accelerate() {
+		System.out.println("Car speeding");
+	}
+}
+interface Bike{
+	default void accelerate() {
+		System.out.println("Car speeding");
+	}
+}
+public class Tester implements Car, Bike {
+
+	@Override
+	public void accelerate() {
+		//line1
+	}
+	
+}
+Which of the options can be added in line1 to remove the error from the following code? (Choose any two options)
+
+Car.super.accelerate()
+Bike.super.accelerate()
+super()
+super.accelerate()
+Q11 of 12
+What should be the output of the following code snippet? 
+
+interface Stationery{
+	int quantity=1;
+}
+class Pen implements Stationery{
+	String color="Green";
+}
+public class User {
+	public static void main(String[] args) {
+		Stationery obj=new Pen();   //line1
+		System.out.println(obj.quantity);   //line2
+	}
+}
+ 
+
+Error in line1 due to wrong way of creating an object
+1
+Error in line2 as object 'obj' cannot access the variable 'quantity'
+Q12 of 12
+Identify which methods can be accessed by object 'obj'  created in line1?
+
+interface HeadPhones{
+	default void displayHP() {
+		System.out.println("HeadPhones Display");
+	}
+}
+interface EarPhones{
+	default void displayEP() {
+		System.out.println("EarPhones Display");
+	}
+
+}
+interface Electronics extends HeadPhones, EarPhones{
+	default void bill() {
+		System.out.println("Billing");
+	}
+}
+public class Test implements Electronics {
+	public static void main(String[] args) {
+		Test obj=new Test();  //line1
+	}
+}
+ 
+
+diaplayHP(), displayEP(), bill()
+only displayEP()
+only bill()
+It can not access any of the methods
+only displayHP()

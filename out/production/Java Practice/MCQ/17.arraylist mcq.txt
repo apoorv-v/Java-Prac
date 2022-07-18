@@ -1,0 +1,181 @@
+Q1 of 9
+Predict the output of the following code:
+
+public class Tester {
+	public static void main(String args[]) {
+		List<String> list = new ArrayList<String>();
+		list.add("Pizza");
+		list.add(0, "Burger");
+		list.add(0, "Sandwich");
+		list.add(0, "Noodles");
+		System.out.println(list.size());
+	}
+}
+0
+1
+2
+4
+Q2 of 9
+Identify the correct statement that can be placed in line 4 in the code given below.
+
+(Choose any two correct options)
+
+public class Tester {
+	public static void main(String[] args) {
+        ArrayList<String> order = new ArrayList<String>();
+        // Line 4
+    }
+}
+order.add("Pizza");
+order.add('Pizza');
+order.add(123);
+order.add(null);
+Q3 of 9
+Predict the output of the following code.
+
+import java.util.ArrayList;
+
+public class Tester { 
+public static void main(String[] args) 
+	{ 
+	ArrayList<Integer> list = new ArrayList<Integer>(); 
+	list.add(0,1); 
+	list.add(1,4); 
+	list.add(2,7); 
+	list.add(2,8); 
+	System.out.println(list);
+	} 
+}
+ 
+
+[1,4,7,8]
+[1,4,8,7]
+[1,4,7]
+Compilation Error as the another element cannot be added to already existing position.
+Q4 of 9
+Predict the output of the following code.
+
+import java.util.ArrayList;
+
+public class Tester{ 
+	public static void main(String[] args) 
+	{ 
+		ArrayList<String> fruit = new ArrayList<String>(); 
+		fruit.add(0,"Apple"); 
+		fruit.add(1,"Grapes"); 
+		fruit.add(3,"Orange"); 
+		System.out.println(fruit);
+	} 
+}
+ 
+
+[Apple, Grapes, Orange]
+[Apple, Grapes, , Orange]
+IndexOutOfBound Exception
+NullPointer Exception
+Q5 of 9
+What will be the output of the following code?
+
+public class Tester{
+	public static void main(String[] args) {
+		 ArrayList<String> list = new ArrayList<String>(); 
+	        list.add("banana"); 
+	        list.add("apple"); 
+	        ArrayList<String> list1 = new ArrayList<String>();
+	        list1.add("banana");
+	        list1.add("apple");
+	        list.addAll(list1);
+	        System.out.println(list);
+	}
+
+}
+Assume the necessary imports are done.
+
+[banana, apple, banana, apple]
+[banana, apple, [banana, apple]]
+[banana, apple, [banana], [apple]]
+[banana, apple]
+Q6 of 9
+Which of the following declarations would be appropriate for a list that is expected to contain numbers?
+
+( Choose any two correct options)
+
+ 
+
+ArrayList list = new ArrayList();
+ArrayList<int> list = new ArrayList<int>();
+ArrayList<Integer> list = new ArrayList<Integer>();
+ArrayList<Number> list = new ArrayList<Number>();
+Q7 of 9
+Which of the following statement is applicable for line 10 in the below code?
+
+import java.util.ArrayList;
+public class Tester{ 
+public static void main(String[] args) 
+	{ 
+	ArrayList<String> word = new ArrayList<String>(); 
+	word.add(0,"Hello"); 
+	word.add(1,"Hii"); 
+	word.add(2,"Bye"); 
+	word.add(3,5);         //line 10
+	System.out.println(word);
+	} 
+}
+ 
+
+[Hello, Hii, Bye]
+[Hello, Hii, Bye, 5]
+Compilation error as we are trying to add Integer in the list where the generic is a string
+Runtime error as we are trying to add Integer in the list where the generic is a string
+Q8 of 9
+What is the output of the code given below?
+
+class Product implements Comparable<Product> {
+    String productId;
+    double price;
+    Product() {
+    }
+    Product(String n, double a) {
+        productId = n;
+        price = a;
+    }
+    public int compareTo(Product product) {
+        if(this.price == product.price)
+        	return 0;
+        else if(this.price > product.price)
+        	return 1;
+        else
+        	return -1;
+    }
+  
+}
+ class ComparableDemo {
+    public static void main(String args[]) {
+        List<Product> list = new ArrayList<Product>();
+        list.add(new Product("Shaggy", 300.00));
+        list.add(new Product("Lacy", 255.00));
+        list.add(new Product("Roger", 100.00));
+        list.add(new Product("Tommy", 450.00));
+        list.add(new Product("Tammy", 175.00));
+        Collections.sort(list);
+
+        System.out.println();
+        for (Product product : list)
+            System.out.print(product.productId + ":" + product.price + ", ");
+    }
+}
+ 
+
+Lacy:255.0, Roger:100.0, Shaggy:300.0, Tammy:175.0, Tommy:450.0,
+Roger:100.0, Tammy:175.0, Lacy:255.0, Shaggy:300.0, Tommy:450.0,
+Tommy:450.0, Shaggy:300.0, Lacy:255.0, Tammy:175.0, Roger:100.0,
+Q9 of 9
+What will the output when the below code is executed?
+
+new Integer(5).compareTo(new Integer(8))
+ 
+
+Error
+Positive value
+Negative value
+Zero  

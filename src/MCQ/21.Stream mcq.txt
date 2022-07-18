@@ -1,0 +1,159 @@
+Page Loaded
+Skip To Tester Content
+Contents
+Details
+thumbnail
+Java 11 Beyond Basics
+Course | Beginner
+33h 13m
+
+
+
+folder
+Prelude
+10m
+done_all
+folder
+Lambdas
+3h 5m
+done
+web_asset
+Lambda Expression
+50m
+done
+code
+Calculator Scenario : Without Lambda Expression - Tryout
+15m
+code
+Calculator Scenario : With Lambda Expression - Tryout
+15m
+code
+Sorting using Lambda Expressions - Tryout
+25m
+code
+Functional Interfaces with Lambda Expression - Tryout
+20m
+code
+User Defined Objects and Lambda Expressions - Tryout
+20m
+assignment_turned_in
+Lambda Expressions - Quiz
+15m
+code
+Lambda Expressions - Exercise 1
+25m
+folder
+Streams
+2h 10m
+done
+folder
+Assignments Nest 1
+1h 30m
+done_all
+folder
+Properties and Logging
+2h
+done
+folder
+Testing using JUnit
+2h 10m
+done
+folder
+Code Analysis
+1h 6m
+done
+folder
+Code Coverage
+51m 36s
+done
+folder
+Modular Programming
+1h 55m
+done
+folder
+Assignments Nest 2
+1h 40m
+folder
+Maven
+55m
+done
+folder
+JDBC and Optional Class
+1h 42m
+done
+folder
+Assignments Nest 3
+1h 45m
+folder
+Capstone Project
+6h 30m
+done
+folder
+Appendix
+4h 13m
+done
+assessment
+Self Assessment
+1h 30m
+Application Logo
+Lambda Expressions - Quiz
+alarm
+  
+14m 24s
+Q1 of 4
+Which one below is the example of Method reference?
+
+list.forEach(System.out::println);
+list.forEach(System.out::println());
+list.forEach(System.out.println());
+list.forEach(System.out->println);
+Q2 of 4
+What will be the output of the code given below if value1 is 3 and value2 is 29.0?
+
+BiPredicate<Integer, Integer> func3 = (value1, value2) -> value1 * value1 * value1 > value2; //Line1
+System.out.println(func3.test(value1, value2));
+ 
+
+True
+False
+Error because of type mismatch
+Error at Line 1 as we cannot execute more than 1 operation in a single Functional Interface line
+Q3 of 4
+What will be the output of the code given below?
+
+@FunctionalInterface
+interface Interface1 {
+	int command(int x, int y);
+}
+@FunctionalInterface
+interface Interface2 {
+	void sayMessage(String myString);
+}
+public class Tester {
+  private int operate(int x, int y, Interface1 functionalObject) {
+	return functionalObject.command(x, y);
+  }
+  public static void main(String args[]) {
+	Interface1 addition = (int a, int b) -> a + b;
+	Interface1 multiplication = (int a, int b) -> a * b;
+	Tester tobj = new Tester();
+
+	System.out.println("Addition of 6 and 3 is: " + tobj.operate(6, 3, addition));
+	System.out.println("Multiplication of 6 and 3 is: " + tobj.operate(6, 3, multiplication));
+	Interface2 fobj = myString -> System.out.println("Hello " + myString);
+	fobj.sayMessage("Infosys");
+  }
+}
+ 
+
+Addition of 6 and 3 is: 9 Multiplication of 6 and 3 is: 18 Hello Infosys
+Unknown Exception will be thrown.
+Invalid interface usage Exception will be thrown as we cannot use same functional interface for more than 1 purpose at one time.
+Q4 of 4
+Which of the following are valid lambda expressions to sort the numbers in numberList in descending order? (Choose 3)
+
+numberList.sort((Integer x, Integer y) -> -x.compareTo(y));
+numberList.sort(Integer x, Integer y -> y.compareTo(x));
+numberList.sort((x, y) -> y.compareTo(x));
+numberList.sort((x, y) -> { return -x.compareTo(y); });
+

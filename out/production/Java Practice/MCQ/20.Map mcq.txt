@@ -1,0 +1,228 @@
+
+Q2 of 10
+What will be the output of the below code?
+
+public static void main(String args[]) {
+	HashMap<String, Integer> classroom = new HashMap<String, Integer>();
+	
+	classroom.put("CL-101", 60);
+	classroom.put("CL-102", 80);
+	classroom.put("CL-103", 100);
+	classroom.put("CL-104", 80);
+	
+	System.out.println(classroom.remove("CL-104"));
+}
+{CL-101=60, CL-102=80, CL-103=100}
+null
+80
+CL-104
+
+
+Q3 of 10
+What will be the output of the below method?
+
+public static void main(String args[]) {
+	HashMap<Integer, Integer> myMap = new HashMap<Integer, Integer>();
+	
+	myMap.put(101, 6);
+	myMap.put(102, 8);
+	myMap.put(103, 10);
+	myMap.put(102, 5);
+	
+	myMap.replace(102, 8, 15);
+	System.out.println(myMap);
+}
+ 
+
+{101=6, 102=15, 103=10}
+Compilation error: HashMap cannot have duplicate keys
+{101=6, 102=15, 103=10, 102=5}
+{101=6, 102=5, 103=10}
+Q4 of 10
+Does Map extend Collection interface?
+
+Yes
+No
+Q5 of 10
+Will the below code lead to error?
+
+If there is an error, identify the line which will throw the error. 
+
+public static void main(String args[]) {
+	HashMap<Object, Object> sampleMap = new HashMap<Object, Object>(); //line 1
+	sampleMap.put(null, null); //line 2
+	sampleMap.put(null, null); //line 3
+}
+line 1
+line 2
+line 3
+The code will not lead to any error
+
+Q6 of 10
+Predict the output of the following code.
+
+class Demo {
+    String test;
+    public Demo(String test) {
+        this.test = test;
+    }
+
+	@Override
+	public int hashCode() {
+		return 1;
+	}
+}
+
+public class Tester {
+	    public static void main(String args[]) {
+	    	
+	    	Map<Demo, String> tests = new HashMap<Demo, String>();
+		    tests.put(new Demo("test1Key"),"test1Value");             
+		    tests.put(new Demo("test2Key"),"test2Value");
+		  	tests.put(new Demo("test1Key"),"test1Value overridden");
+			System.out.print(tests.size());
+			System.out.print(" "+tests.get(new Demo("test1Key")));
+	        
+	   }
+}
+3 null
+2 test1Value overridden
+3 test1Value overridden
+2 null
+Q7 of 10
+Predict the output of the code given below.
+
+class Demo {
+    String framework;
+    public Demo(String framework) {
+        this.framework = framework;
+    }
+	@Override
+	public int hashCode() {
+		return 1;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		Demo other = (Demo) obj;
+		 if (!framework.equals(other.framework))
+			return false;
+		return true;
+	}
+}
+
+
+public class Tester {
+    public static void main(String args[]) {
+        Map<Demo, String> track = new HashMap<Demo, String>();
+        Demo Testers1 = new Demo("Mockito");
+        Demo Testers2 = new Demo("TestNg");
+        Demo Testers3 = new Demo("Mockito"); //Line 1
+        track.put(Testers1, "Java");
+        track.put(Testers2, "C#");
+        track.put(Testers3, "Microsoft");
+        Set<Demo> se = track.keySet();
+        
+        for (Demo i: se) {
+        	System.out.println(track.get(i)+" "+i.framework);
+        }
+    }
+}
+Compilation Error in Line 1 : Duplicate name
+Microsoft Mockito   C# TestNg
+Microsoft Mockito   C# TestNg     Java Mockito
+RunTime Error: Incompatible with Java Comparable
+Q8 of 10
+Predict the output given below.
+
+public class Tester {
+    public static void main(String args[]) {
+    	
+    	Map<String, String> tests = new HashMap<String, String>();
+        tests.put(new String("test1"), "Junit");
+        tests.put(new String("test2"), "Mockito");
+        tests.put(new String("test1"), "TestNg");
+        System.out.println(tests);
+    }
+}
+{test2=Mockito, test1=TestNg}
+{ test1=Junit, test2=Mockito, test1=TestNg}
+{test1 = Junit, test2=Mockito}
+Compilation Error: duplicate keys insertion
+Q9 of 10
+What will be the output of the code given below?
+
+class Product {
+          private String productName;
+          public Product( String productName) {
+                   this.productName = productName;
+          }
+
+          public boolean equals(Object obj) {
+                   if (obj == this)
+                             return true;
+                   return this.productName == (((Product) obj).productName);
+          }
+
+          public int hashCode() {
+                   return this.productName.length();
+          }
+
+          public String toString() {
+                   return productName;
+          }
+
+}
+
+public class Tester {
+
+          public static void main(String[] args) {
+
+                   Product product1 = new Product("HP");
+                   Product product2 = new Product("Dell");
+                   HashMap<Product,Integer> map = new HashMap<Product,Integer>();
+                   
+                   map.put(product1,1001);
+                   map.put(product2,1002);
+
+                   System.out.println(map.get(new Product("HP")));
+          }
+}
+ 
+
+HP
+1001
+null
+Exception is thrown as Product object cannot be the key for a Map
+Q10 of 10
+What will be the output of the code given below?
+
+class Employee{
+	 String name;
+	 double salary;
+	 Employee(String name,double salary){
+		this.name=name;
+		this.salary=salary;
+	}	
+}
+
+class Tester{
+	public static void main(String[] args) {
+		Employee employee1=new Employee("John",30000.00);
+		Employee employee2=new Employee("Sam",40000.00);
+		Employee employee3=new Employee("Jon",35000.00);
+		Map<Integer,Employee> map=new HashMap<Integer,Employee>();
+		map.put(1, employee1);
+		map.put(2, employee2);
+		map.put(1, new Employee("Jon",30000.00));
+		for(Map.Entry<Integer, Employee> entry:map.entrySet()) {
+			System.out.println("EmployeeId: "+entry.getKey()+" Name: "+entry.getValue().name+"  Salary: "+entry.getValue().salary );
+		}
+	}
+}
+ 
+
+EmployeeId: 1 Name: John Salary: 30000.0 EmployeeId: 2 Name: Sam Salary: 40000.0
+EmployeeId: 1 Name: Jon Salary: 35000.0 EmployeeId: 2 Name: Sam Salary: 40000.0
+The code will throw runtime exception as the same key cannot be used for 2 values
+Set cannot be converted to Map.Entry
+

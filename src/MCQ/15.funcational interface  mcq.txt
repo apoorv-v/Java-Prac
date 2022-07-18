@@ -1,0 +1,142 @@
+Q1 of 7
+Predict the output of the following code:
+
+@FunctionalInterface
+interface Operation { 
+    public abstract int add(int num1, int num2) ;
+} 
+interface Math extends Operation{
+	
+}
+class Tester implements Math{ 
+	@Override
+	public int add(int num3 , int num4) {
+		return num3+num4;
+	}
+    public static void main(String args[]){
+ 	 	Tester obj = new Tester();
+        System.out.println(obj.add(9,45)); 
+    } 
+}
+ 
+
+Error as Interface Math did not Override the add method
+Error as Functional Interface cannot have an abstract method
+54  #
+Error as the Functional Interface Operation is being extended by Math Interface  #
+Q2 of 7
+Which of the following statements are CORRECT about functional Interfaces?
+
+A functional interface cannot have static method F
+@FunctionalInterface annotation specifies that the Interface can only have one abstract method  T
+A functional Interface can have a method defined as final. F
+A functional Interface cannot be extended by another Interface. F
+Q3 of 7
+Observe the following code and choose the CORRECT option:
+
+@FunctionalInterface
+interface Phone 
+{ 
+    public void clickPicture();
+    public void call();
+}
+ 
+
+@FunctionalInterface throws an error as there are two abstract methods in Interface Phone. ##
+The code compiles successfully
+Q4 of 7
+Observe the following code and choose the CORRECT option:
+
+import java.math.*;
+@FunctionalInterface
+interface Operation 
+{ 
+    public abstract int add(int y, int z) ;
+    public default int sum(int a, int b) {
+    	return a+b;
+    }
+    public default int subtract(int c, int d) {
+    	return Math.abs(c-d);
+    }
+}
+ 
+
+Error as a Functional Interface cannot have concrete methods
+Code is valid and Compiles successfully #
+Error as the scope of methods in a Functional Interface cannot be default
+Q5 of 7
+Consider the code given below.
+
+interface Demo {
+	void func();
+}
+ abstract public class Tester implements Demo{
+	 
+ }
+Which of the following statements are correct?
+
+ 
+
+ 
+
+()
+
+[RIGHT] ()
+
+This code will not compile, because method func() in interface Demo must be defined abstract. (The method func() has no implementation given, so it makes no difference if we give it as abstract or not)
+
+This code will not compile, because class tester must implement method func() from interface Demo.
+This code will not compile, because in the declaration of class tester we must use the keyword extends instead of implements.
+This code will compile without any errors.
+Q6 of 7
+Predict the output of the following code.
+
+interface Demo{
+	void printDemo();
+}
+public class Tester implements Demo{
+	public void printDemo() {
+		System.out.println("In tester class");
+		   
+	 }
+	public static void main(String[] args) {
+		Demo demo = new Tester();  //Line 1 
+		demo.printDemo(); //Line 2
+    
+}
+}
+ 
+
+In tester class  #
+Compilation error on line 1 : Cannot find Demo class
+Compilation error on Line 2: Cannot find printDemo()
+Q7 of 7
+Predict the output of the following code.
+
+interface Demo { 
+    void demoOne();
+    void demoTwo();
+}
+
+abstract class Child implements Demo {
+    public void demoOne(){
+        System.out.println("demoOne executed");
+    }
+}
+
+class SubChild extends Child {
+    public void demoTwo(){
+        System.out.println("demoTwo executed");
+    } 
+}
+public class Tester{
+    public static void main(String args[]) {
+        Child child=new SubChild();
+        child.demoTwo();
+}
+ 
+
+Compilation error: class Child should implement all the methods of an interface
+Compilation error: Cannot call demoTwo() method on Child’s reference
+ Code will successfully get executed and displays "demoTwo executed”
+Compilation error: Abstract class cannot implement an interface

@@ -1,0 +1,105 @@
+Q1 of 5
+Predict the output of the following code:
+
+public class FinalDemo {
+    public static void main(String[] args) {
+        Names n = new Names();
+        System.out.println(n.NAME);
+    }
+}
+
+class Names {
+    final String NAME = "Tommy";
+
+    public Names() {
+        this.NAME = "Louis";
+    }
+}
+ 
+
+Tommy
+Compilation Error
+Louis
+Q2 of 5
+Predict the output of the following code.
+
+class Base { 
+  public final void show() { 
+       System.out.println("In Base class"); 
+    } 
+} 
+class Derived extends Base { 
+    public void show() {   
+       System.out.println("In Derived class"); 
+    } 
+} 
+public class Tester{ 
+    public static void main(String[] args) { 
+        Base b = new Derived();
+        b.show(); 
+    } 
+} 
+ 
+
+In Base Class
+In Derived Class
+Compilation Error : cannot override final method show()
+Compilation Error : cannot extend final class Base
+Q3 of 5
+What will be the output of the code given below ?
+
+public class Demo
+{
+    final int test = 50;    
+
+    public static void main(String[] args)
+    {
+        final int testResult = 30;
+        final int test; // Line 1
+        
+        Demo t = new Demo();
+        test = 20; // Line 2
+
+        System.out.println(test);
+        System.out.println(t.calculate(testResult));
+    }
+
+    int calculate(int a)
+    {
+        return a + 10;
+    }
+}
+ 
+
+Compile Error : Cannot reassign a final variable
+20 40
+Compile Error : The final field cannot be assigned in Line 2
+50 40
+Q4 of 5
+Which of the following statements are true regarding final keyword ?
+
+Constructors can be declared final.
+We cannot make abstract method final.
+We cannot overload final method
+Q5 of 5
+Predict the output of the following code.
+
+public class Tester{
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.testMethod); //Line 1
+    }
+}
+
+class Test {
+    final String testMethod = "Junit";
+
+    public void setTest(String test) {
+        this.testMethod = test;
+    }
+}
+ 
+
+Junit
+Compilation Error :The final field cannot be assigned
+RunTime Error: IllegalArgumentException due to Line 1

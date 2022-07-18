@@ -1,0 +1,128 @@
+
+Q1 of 5
+Consider the following code:
+
+interface FuncInter1 { 
+        int operation(int a, int b); 
+    } 
+
+interface FuncInter2 { 
+        void sayMessage(String message); 
+    } 
+   
+public class Test { 
+	 
+    private int operate(int a, int b, FuncInter1 fobj) { 
+	    return fobj.operation(a, b); 
+	} 
+
+    public static void main(String args[]) { 
+       
+        FuncInter1 add = (int x, int y) -> x * y; 
+        FuncInter1 multiply = (int x, int y) -> x + y; 
+        Test tobj = new Test(); 
+        System.out.println("Addition is " + tobj.operate(6, 3,add)); 
+        System.out.println("Multiplication is " + tobj.operate(6, 3,multiply)); 
+  
+        FuncInter2 fobj = message ->System.out.println("Hello "+ message); 
+        fobj.sayMessage("Infosys"); 
+    } 
+}
+
+What will be the output?
+
+Unknown Exception will be thrown.
+Invalid interface usage Exception will be thrown as we cannot use same functional interface for more than 1 purpose at one time
+Addition is 18 Multiplication is 9 Hello Infosys
+
+
+
+
+
+Q2 of 5
+What will be the OUTPUT when the following code gets executed? 
+
+public class Tester{ 
+    public static void main(String args[]) {  
+        ArrayList<Integer> arrL = new ArrayList<Integer>(); 
+        arrL.add(1); 
+        arrL.add(2); 
+        arrL.add(3); 
+        arrL.add(4); 
+
+        arrL.stream().forEach(num -> System.out.println(num));
+        arrL.stream().filter(num -> num%2==0)
+                     .map(num -> num*num)
+                     .forEach(num -> System.out.println(num)); 
+    } 
+}
+ 
+
+1 2 3 4 4 16
+16 4 4 1 2 3
+Runtime Exception will be thrown.
+
+
+
+
+
+Q3 of 5
+What will be the output of the following code?
+
+(Assume the following code is in main() method and all the necessary imports are done) 
+
+List<Integer> list = new ArrayList<Integer>();
+list.add(3);
+list.add(6);
+list.add(9); 
+
+list.stream().map(number -> number * 3).forEach(System.out::println); //Line1
+
+9 18 27
+27 216 729
+Syntax Error at line 1 system.out::println is not a correct syntax for printing
+
+
+
+
+
+Q4 of 5
+ Have a look at the following code:
+
+(Assume the code is in main() method and all the necessary imports are  done)
+
+List<String> list = new ArrayList<String>();
+list.add("Welcome");
+list.add("to");
+list.add("Infosys");
+
+List<String> answer =list.stream().map(String::toUpperCase).collect(Collectors.toList()); //Line1
+
+System.out.println(answer);
+What will be the output when the code gets executed?
+
+[WELCOME, TO, INFOSYS]
+Nothing will be printed as collectors in line 1 will be an empty list.
+Syntax error at line 1 String::toUpper Case is not the correct syntax.
+
+
+
+
+Q5 of 5
+What will be the OUTPUT of the following code?
+
+(Assume the code is in main() method and all the necessary imports are done) 
+
+Stream<String> stream = Stream.of("Weeks", "have", "passed", "in","INFOSYS");
+
+stream.filter(str -> str.endsWith("s")).forEach(System.out::println);
+ 
+
+Weeks
+Weeks INFOSYS
+Weeks have passed in INFOSYS
+have passed in
+
+
+
+

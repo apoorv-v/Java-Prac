@@ -1,0 +1,113 @@
+Q1 of 5
+Predict the output of the following code.
+
+class ParentClass extends Exception { };
+class ChildClass extends ParentClass { };
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            throw new ChildClass();
+        }
+        catch(ParentClass p) {
+            System.out.println("Caught ParentClass exception");
+        }
+        catch(ChildClass e) {
+            System.out.println("Caught ChildClass exception");
+        }
+    }
+}
+ 
+
+Caught ParentClass Exception
+Caught ChildClass Exception
+Error because the ChildClass is not Throwable
+Error because the ParentClass Exception is caught before ChildClass #
+Q2 of 5
+Which of the following statements could be inserted at the comment (// Insert code here) so that when executed it prints, "Some error occurred"?(Choose any 2)
+
+class Tester {
+    public static void main(String[] args) {
+        try {
+            // Insert code here
+
+        }
+        catch (RuntimeException e) {
+            System.out.println("Some error occurred");
+        }
+    }
+}
+ 
+
+throw new ArrayIndexOutOfBoundsException();  #
+throw new Exception();
+throw new NullPointerException();  #
+throw new IOException();
+Q3 of 5
+Predict the output for the following code snippet.
+
+public class ExceptionDemo {
+    
+    public static void display() {
+        System.out.print(" inside display()");
+        throw new RuntimeException();
+    }   
+
+    public static void main(String[] args) {
+        try {
+            System.out.print(" main");
+            display();          
+        }
+        catch (Exception e) {
+            System.out.print(" caught");
+        }       
+        finally {
+            System.out.print(" finally");
+        }
+        System.out.print(" end");
+    }
+}
+ 
+
+Compilation error, as there is no 'throws' keyword used.
+main inside display() caught end
+main inside display() caught finally end  #
+RunTimeException
+Q4 of 5
+What will be the output of the following code snippet ?
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            method(); ______________________________
+            System.out.print("A");
+        }
+        catch (Exception e) {
+            System.out.print("B");
+        } 
+        catch (Throwable e) {
+            System.out.print("C");  ________________
+        }
+        finally {
+            System.out.print("D"); _________________
+        }
+        System.out.println("E");
+    }
+
+    public static void method() {
+        throw new Error();
+    }
+}
+ 
+
+ABDE
+BDE
+ABCDE
+CDE  #
+Q5 of 5
+Consider a Java program being executed to read gigabytes of a file. For each line it reads, a Java object corresponding to the line is created. After some time, JVM is not able to allocate memory to create object. In this scenario, choose the correct statement from below.
+
+JVM will throw an Exception which programmer can handle and program can continue to read the next line.
+JVM will throw an Error which programmer can handle and program can continue to read the next line.
+JVM will throw an Error and program will abort as this situation cannot be handled by programming
+JVM will throw an Exception and program will abort as this situation cannot be handled by programming

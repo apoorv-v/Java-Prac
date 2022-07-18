@@ -1,0 +1,52 @@
+Q1 of 3
+Which of the following Set interface depends on the compareTo() method for ordering and detecting duplicates?
+
+HashSet
+TreeSet
+LinkedHashSet
+Q2 of 3
+What is the output of the below code?
+
+import java.util.HashSet;
+
+public class Tester {
+	public static void main(String[] args) {
+		HashSet<Integer> set = new HashSet<Integer>();
+		set.add(20);
+		set.add(50);
+		set.add(20);
+		System.out.print(set.size() + " ");
+		set.remove(20);
+		System.out.print(set.size() + " ");
+		set.add(50);
+		System.out.print(set.size() + " ");
+	}
+}
+3 2 3
+2 1 1
+2 2 2
+2 2 1
+Q3 of 3
+What is the output of the below code?
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Tester {
+	public static void main(String args[]) {
+		TreeSet s1 = new TreeSet();
+		s1.add("one");
+		s1.add("two");
+		s1.add("three");
+		s1.add("four");
+		s1.add("one");
+		Iterator it = s1.iterator();
+		while (it.hasNext()) {
+			System.out.print(it.next() + " ");
+		}
+	}
+}
+four one three two
+one two three four
+one two three four one
+two three four one

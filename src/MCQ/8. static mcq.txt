@@ -1,0 +1,154 @@
+Q1 of 6
+How many static variables, local variables and instance variables are present in the code given below?
+
+ class Car {
+	private String vehicleNumber;
+	private String color;
+	private static int numberOfCars = 0;
+
+	public Car(String vehicleNumber, String color) {
+		this.vehicleNumber = vehicleNumber;
+		this.color = color;
+	}
+
+	public void display(String name) {
+		System.out.println("Owner's name: " + name);
+		System.out.println("Vehicle number: " + vehicleNumber);
+		System.out.println("Color: " + color);
+	}
+}
+ 
+
+static variables: 1, instance variables: 2, local variables: 1
+static variables: 3, instance variables: 0, local variables: 2
+static variables: 1, instance variables: 2, local variables: 3  #
+static variables: 3, instance variables: 2, local variables: 3
+Q2 of 6
+What will be the output of the following code snippet ?
+
+class Computer {
+	private static int id;
+	private static int counter = 0;
+
+	public Computer() {
+		id = ++counter;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	// Rest of the methods
+}
+
+public class Tester {
+	public static void main(String[] args) {
+		Computer comp1 = new Computer();
+		Computer comp2 = new Computer();
+		Computer comp3 = new Computer();
+		System.out.println(comp1.getId() + " " + comp2.getId() + " "
+				+ comp3.getId());
+	}
+}
+ 
+
+1 2 3
+3 3 3  #
+0 1 2
+0 0 0
+Q3 of 6
+Predict the output of the code given below.
+
+class Printer {
+	static {
+		System.out.println("Static block in Printer class");
+	}
+
+	public static void display(String message) {
+		System.out.println(message);
+	}
+}
+
+public class Tester {
+	public static int sampleVariable = 1;
+
+	static {
+		System.out.println("Static block in Tester class");
+	}
+
+	public static void main(String[] args) {
+		sampleVariable++;
+		Printer p = null;
+		System.out.println("In main");
+		p.display("The value of sample variable is: " + sampleVariable);
+	}
+}
+ 
+
+Static block in Tester class ; In main ; Static block in Printer class ; The value of sample variable is: 2  #
+Static block in Tester class ; In main ; The value of sample variable is: 2 ; Static block in Printer class
+Static block in Printer class ; Static block in Tester class ; In main ; The value of sample variable is: 2
+Static block in Tester class ; Static block in Printer class ; In main ; The value of sample variable is: 2
+Q4 of 6
+Predict the output of the code given below.
+
+class Tester {
+	static int num = 1;
+	static {
+		num = 2;
+	}
+	
+	static {
+		num = 3;
+	}
+	
+	public static void display() {
+		System.out.println(num);
+	}
+	public static void main(String[] args) {
+		display();
+	}
+}
+ 
+
+1
+3 #
+2
+Q5 of 6
+Predict the output of the following code:
+
+class Demo {
+    static int x;
+    static int y;
+    void add(int a , int b) {
+        x = a + b;
+        y = a +b  + b;
+    }
+}    
+
+public class Tester {
+    public static void main(String args[]) {
+        Demo obj1 = new Demo();
+        Demo obj2 = new Demo ();   
+        int a = 2;
+        obj1.add(a, a + 1);
+        obj2.add(5, a);
+        System.out.println(obj1.x + " " + obj2.y);     
+    }
+}
+ 
+
+7 7
+6 6
+7 9  #
+9 7
+Q6 of 6
+Which of the following options are correct?
+
+(Choose any two correct options)
+
+Static members can only be accessed by static methods
+non-static members can be accessed by static methods
+Static blocks execute only once #
+Static variables and methods can be accessed without creating an object of a class #
+

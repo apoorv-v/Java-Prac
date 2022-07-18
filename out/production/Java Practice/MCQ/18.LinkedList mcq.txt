@@ -1,0 +1,131 @@
+Q1 of 7
+What will be the output of the code given below?
+
+public static void main(String args[]) {
+	LinkedList<Integer> list = new LinkedList<Integer>();		
+	list.add(12);
+	list.add(13);
+	list.add(14);	
+	list.remove();		
+	System.out.println(list);
+}
+[12, 13]
+[13, 14]
+Compilation error: parameter needs to be passed to remove() method
+[12, 13, 14]
+Q2 of 7
+What will be the output of the code given below?
+
+public static void main(String args[]) {
+	LinkedList<Object> list = new LinkedList<Object>();     //line 1	
+	list.add("Java");
+	list.add(20);
+	list.add(3.5);
+	list.add(100);
+		
+	if(list.set(0, "Data Structures"))     //line 2
+		System.out.println("Successfully replaced!");
+	else
+		System.out.println("Not replaced!");	
+}
+Successfully replaced!
+Not replaced!
+Compilation error: cannot convert from Object to boolean in line 2
+Compilation error: linked list cannot contain elements of different types in line 1
+Q3 of 7
+What will be the output of the code given below?
+
+public static void main(String args[]) {
+	LinkedList<Object> list = new LinkedList<Object>();			
+	System.out.println(list.indexOf(10));	
+}
+0
+-1
+false
+null
+Q4 of 7
+Predict the output of the following code.
+
+import java.util.LinkedList;
+
+public class Tester{
+	public static void main(String[] args) {
+		LinkedList<String> list = new LinkedList<String>(); 
+        list.add("A"); 
+        list.add("B"); 
+        list.addLast("C"); 
+        list.addFirst("D"); 
+        list.addFirst("G"); 
+        list.add(2, "E"); 
+        list.add("F"); 
+        list.add("G"); 
+        System.out.println("Linked list : " + list);
+}
+}
+ 
+
+[G, D, E, A, B, C, F, G]
+[G, D, E, A, B, C, F]
+[D, E, A, B, C, F, G]
+[A, B, C, D, E, F, G, G]
+Q5 of 7
+Predict the output of the following code.
+
+import java.util.LinkedList; 
+
+public class Tester {
+	public static void main(String[] args) {
+		LinkedList<String> list = new LinkedList<String>(); 
+		 list.add("Thomas");
+		 list.add("Joe");
+		 list.addFirst("Ross");
+		 list.add("Joseph");
+		 list.addLast("Shelly");
+		 list.add("Monica");	        
+		 System.out.println(list.getFirst() +" "+ list.getLast());
+	       
+	}
+
+}
+ 
+
+Thomas Shelly
+Ross Shelly
+Ross Monica
+Joe Shelly
+Q6 of 7
+Predict the output of the following code.
+
+import java.util.LinkedList;
+
+public class Tester {
+	public static void main(String[] args) {
+		LinkedList<String> object = new LinkedList<String>(); 
+		LinkedList<String> object1 = new LinkedList<String>(); 
+        
+        object.add("A"); 
+        object.add("B"); 
+        object.addLast("C"); 
+        
+        object1.add("A"); 
+        object1.add("B"); 
+        object1.add("C");
+        
+        object.addAll(object1);
+        System.out.println("Linked list : " + object);
+	}
+}
+   
+
+[A, B, C, A, B, C]
+[A, B, C]
+[ ]
+[A, B, C,[ A, B, C]]
+Q7 of 7
+Which class is best when elements are to be added and deleted in the middle of the list?
+
+ 
+
+ArrayList
+LinkedList
+Both are the same

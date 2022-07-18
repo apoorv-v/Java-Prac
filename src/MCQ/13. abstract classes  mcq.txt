@@ -1,0 +1,89 @@
+Q1 of 5
+Which of the following is FALSE?
+
+Abstract classes can have static and final methods.
+Abstract methods cannot be declared as static.
+Abstract methods should not be overridden.
+Q2 of 5
+Predict the output of the following code:
+
+abstract class Demo{
+	Demo(){ 			       //Line1
+		System.out.println("Constructor");
+	}			
+}
+public class Tester extends Demo{	
+	public static void main(String[] args) {
+		Demo obj= new Tester();   //Line2
+		Tester obj1 = new Tester(); //Line3
+	}
+}
+ 
+
+Error in Line1 as an abstract class cannot have Constructors
+Error in Line3 as object cannot be created using Tester class
+Constructor Constructor
+Error in Line2 as object cannot be created using Demo class
+Q3 of 5
+Predict the output of the following code:
+
+abstract class Demo{
+	public char alpha;
+	Demo(){
+		alpha='D';
+	}
+}
+public class Tester extends Demo{
+	final public void setAlpha(char alpha) {
+		this.alpha=alpha;
+	}
+	final public void getAlpha() {
+		System.out.println("alpha = "+alpha);
+	}
+	public static void main(String[] args) {
+		Tester obj=new Tester();
+		obj.setAlpha('A');
+		obj.getAlpha();
+	}
+}
+ 
+
+alpha = A
+alpha = D
+Error as subclass of abstract class cannot have final methods
+Error as abstract class Demo does not have abstract method
+Q4 of 5
+Observe the following code and Predict the Output:
+
+abstract class SquareRoot {
+	SquareRoot(){
+		System.out.println("Abstract Class ");
+	}
+	abstract double calculate(double val);
+	public int result() {
+		return 1;
+	}
+}
+public class Tester extends SquareRoot{	
+	double calculate(double val) {
+		return Math.sqrt(val);
+	}
+	public static void main(String[] args) {
+		Tester obj= new Tester();
+		System.out.println(obj.calculate(64));
+	}
+}
+ 
+
+Error as the result() method is not Overriden in abstract class
+Abstract Class 8.0
+Error as @Override annotation is not used while overriding the calculate() method
+8.0
+Q5 of 5
+Select the CORRECT option from the following:
+
+Abstract class can have only concrete methods.
+Abstract class can have concrete methods as well as abstract methods
+Abstract class should have at least one concrete method
+Abstract class should have at least one abstract method
+

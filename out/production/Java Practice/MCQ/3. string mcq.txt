@@ -1,0 +1,106 @@
+Q1 
+
+public class Tester {
+	public static void main(String args[]) {
+		String strOne = "Jonny";
+		String strTwo = new String("Jonny");
+		System.out.print(strOne.equals(strTwo));
+		System.out.print(strOne == strTwo);
+	}
+}
+
+true true
+true false  #
+false true
+false false
+
+
+Q2
+public class Tester {
+	public static void main(String args[]) {
+		String name = "Oliver";
+		name.concat("Lawrence");
+		String department = "Digital";
+		
+		System.out.println(name+department);
+	}
+}
+ 
+OliverLawrenceDigital #
+OliverDigital
+Compliation Error :The method concat is undefined for the type String
+OliverLawrence
+
+
+Q3
+Which of the following is the correct way to concatenate two strings ?
+
+(Choose two options)
+strOne + strTwo  #
+strOne.concat(strTwo)  #
+strOne.substring(strTwo)
+strOne.append(strTwo)
+strOne == strTwo
+
+
+Q4
+How many objects will get created in the following code ?
+
+String s1 = new String("Infosys");
+String s2 = new String("Infosys");
+String s3 = new String("Infosys");
+
+one
+two
+three  #
+six
+
+Q5
+What will be the output of the following code  ?
+
+public class Tester {
+    public static void main(String args[]) {
+        StringBuilder s1 = new StringBuilder("Java is Object Oriented");
+        String result = s1;
+        System.out.println(result);
+        
+    }
+}
+
+Java is Object Oriented
+null
+Compilation Error: Cannot convert from StringBuilder to String  #
+
+
+
+Q6
+Which is the correct way to initialize the StringBuilder ?
+
+(Choose three options)
+
+StringBuilder sb = new StringBuilder();  #
+StringBuilder sb = new ("Java");
+StringBuilder sb = new StringBuilder("Java"); #
+StringBuilder sb = "Java";
+StringBuilder sb = new StringBuilder(45);  #
+
+
+
+Q7
+What will be the output of the following code?
+
+public class StringDemo {
+    public static void main(String[] args) {
+
+        String word1 = "Willow", word2 = "ow";
+        
+        System.out.println(word1 == "Willow");
+        System.out.println(word1 == ("Will"+"ow"));
+        System.out.println(word1 == ("Will"+word2));
+    }
+}
+true false false
+true true false
+true true true
+false false false
+

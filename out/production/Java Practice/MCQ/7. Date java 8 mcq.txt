@@ -1,0 +1,101 @@
+Q1 of 8
+Default format of LocalDate is ____
+
+yyyy-MM-dd
+yyyy-mm-DD
+yyyy-dd-mm
+yyyy-dd-MM
+Q2 of 8
+How can you find out the difference between 2 dates?
+
+date1.difference(date2);
+date1.until(date2,TemporalUnit);
+date1.between(date2);
+date1.minus(date2);
+Q3 of 8
+What will be the output of the code given below?
+
+public static void main(String[] args) {
+                LocalDateTime date1=LocalDateTime.now();
+                System.out.println(date1.plus(Period.ofDays(-1)));
+}
+ 
+
+Yesterday's Date and Time
+Error as LocalDateTime.now() method is not defined
+Will print nothing as date1.plus() method has void as it's return type
+Error as Period.ofDays() method only takes positive values
+Q4 of 8
+What will be the output of the code given below?
+
+public class Test {
+    public static void main(String[] args) {
+        LocalDate ld = LocalDate.of(2018,1,1);
+        ld=ld.plusMonths(-2);
+        ld=ld.minusDays(-5);
+        System.out.println(ld);
+    }
+}
+ 
+
+2017-11-06
+2017-10-27
+2017-03-06
+2017-02-25
+Q5 of 8
+What will be the output of the code given below?
+
+public static void main(String[] args) {
+        LocalDateTime date1 = LocalDateTime.now();
+        System.out.println(date1.isAfter(date1.plusDays(1)));
+}
+ 
+
+False
+True
+Error as we cannot call plusDays() method inside another method
+Nothing will get printed as isAfter() method has void as it's return type
+Q6 of 8
+What will be the output of the code given below?
+
+public static void main(String[] args) {
+        LocalDate date1 = LocalDate.now();          //line1
+        System.out.println(date1.isAfter(date1));   //line2
+}
+ 
+
+True because the dates are same
+False because the dates are same
+True because some miliseconds will pass between the execution of line1 and line2
+None of the above
+Q7 of 8
+What will be the output of the code given below?
+
+public class Tester {
+    public static void main(String[] args) {
+        LocalDateTime date1 = LocalDateTime.of(LocalDate.of(2018, 1, 1), LocalTime.of(0, 0));
+        System.out.println(date1);
+        System.out.println(date1.toString());
+    }
+}
+ 
+
+Date: 2018/01/01 Time: 00:00 2018-01-01T00:00
+2018-01-01T00:00 2018-01-01T00:00
+2018-01-01T00:00 Date: 2018/01/01 Time: 00:00
+Date: 2018/01/01 Time: 00:00 Date: 2018/01/01 Time: 00:00
+Q8 of 8
+What will be the output of the code given below?
+
+public static void main(String[] args) {
+		LocalTime time1 = LocalTime.parse("10:15:30");
+		LocalTime time2 = LocalTime.parse("19:12:30");
+		System.out.println(time1.until(time2, ChronoUnit.CENTURIES));
+}
+ 
+
+0
+1
+UnsupportedTemporalType Exception will be thrown
+ChronoUnit.CENTURIES is not defined
+

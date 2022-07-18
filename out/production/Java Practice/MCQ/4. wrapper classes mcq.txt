@@ -1,0 +1,91 @@
+Q1 
+Predict the output of the following code:
+
+public class Tester {
+
+	public static void main(String[] args) {
+	 	byte number=127;
+	 	Byte obj=number;
+	 	int output = obj.compareTo((byte) 127);
+	 	System.out.println(obj+" "+output);
+	}
+}
+ 
+
+A. 127 1
+B. 127 127
+C. 127 0 #
+D. 1 0
+
+
+Q2 
+What is the output of the following code snippet ?
+
+public class TestException {
+
+    public static void main(String[] args) {
+        Integer totalValue = calculate(45);
+        System.out.println(totalValue.intValue());
+    }
+
+    private static Integer calculate(int i) {
+        return null;
+    }
+}
+
+NullPointerException  #
+null
+Compilation Error as NullPointerException is not caught
+
+
+
+
+Q3 
+What will be the output of the following code:
+
+Integer x = 100;
+Integer y = 100;
+System.out.println(x == y);
+x = 128;
+y = 128;
+System.out.println(x == y);
+ 
+
+true false  #
+true true
+false false
+false true
+
+
+
+Q4 
+Predict the output of the following code snippet: 
+
+public class Tester {
+
+    public static void main(String[] args) {
+	        char test[] = {'a', 'A' , '5'};
+	        System.out.println(Character.isDigit(test[2]));
+			System.out.println(Character.isUpperCase(test[1]));
+	    }
+}
+ 
+
+true true  #
+false true
+true false
+
+
+Q5 
+In the below code snippet, auto-boxing occurs in which statement?
+
+Integer[] intArray = new Integer[12];  //line 1
+intArray[0] = 20;                      //line 2  #
+int value = intArray[0];               //line 3
+ 
+
+line 1
+line 2  ##
+line 3
+No auto-boxing used
+

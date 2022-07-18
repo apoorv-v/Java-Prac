@@ -1,0 +1,223 @@
+Q1 of 6
+What will be the output of the following code snippet?
+
+class Person {
+	String name;
+
+	Person() {
+		System.out.println("In Person class");
+	}
+
+	void print() {
+		System.out.println("Person name " + name);
+	}
+}
+
+public class Student extends Person {
+	int id;
+
+	Student() {
+		System.out.println("In Student class");
+	}
+
+	void print() {
+		System.out.println("Student name " + name);
+	}
+
+	public static void main(String args[]) {
+		Person person = null;
+		person = new Student();
+		person.name = "John";
+		person.print();
+	}
+}
+ 
+
+In Person class In Student class Student name John
+In Student class In Person class Student name John
+In Person class In Student class Person name John
+In Student class Student name John
+Q2 of 6
+Predict the output of the code given below.
+
+public class Bank {
+
+	private void getBankName() {
+		System.out.println("Bank");
+	}
+
+	public static void main(String[] args) {
+		Bank bank = new Bank();
+		bank.getBankName();
+	}
+}
+
+class ABCBank extends Bank {
+	public void getBankName() {
+		System.out.println("ABCBank");
+	}
+}
+ 
+
+MyBank
+Bank
+Bank MyBank
+Compilation Error: The method getBankName() from type Bank is not visible
+Q3 of 6
+What will be the output of the following code snippet ?
+
+class A {
+	public int method1() {
+		return 20;
+	}
+}
+
+class B extends A {
+	public int method1() {
+		return 30;
+	}
+
+	public int method2() {
+		return 40;
+	}
+}
+
+class C extends B {
+	public int method2() {
+		return 20;
+	}
+}
+
+public class Tester {
+	public static void main(String[] args) {
+		A a = new A();
+		B b = new B();
+		C c = new C();
+		System.out.println(a.method1() + c.method1() + c.method2());
+	}
+}
+ 
+
+90
+80
+70
+Error: method1() should be overriden in class C
+Q4 of 6
+What will be the output of the following code snippet ?
+
+class Person {
+	String name;
+
+	Person() {
+		name = "John";
+	}
+
+	public void getDetails() {
+		System.out.println(name);
+	}
+}
+
+class Employee extends Person {
+	int age;
+
+	Employee() {
+		age = 34;
+	}
+
+	public void getDetails() {
+		System.out.println(name + " " + age);
+	}
+}
+
+class Customer extends Employee {
+	int salary;
+
+	Customer(int salary) {
+		this.salary = salary;
+		name = "Maddy";
+	}
+
+	public void getDetails() {
+		System.out.println(name + " " + age + " " + salary);
+	}
+}
+
+public class Account {
+	public static void main(String[] args) {
+		Person c = new Customer(20000);
+		c.getDetails();
+	}
+}
+ 
+
+Maddy 34 20000
+John 34 20000
+John 34
+Q5 of 6
+Find the output of the code given below.
+
+class Parent {
+
+	int val1 = 0;
+	Parent(){
+		sum();
+	}
+	void sum() {
+		val1 +=10;
+	}
+	int returnval() {
+		return val1;
+	}
+ }
+ class Child extends Parent{
+	 Child(){
+		 sum();
+	 }
+	 void sum() {
+		 val1+=20;
+	 }
+ }
+ public class tester{
+	 public static void main(String[] args) {
+		Parent parent = new Child();
+		System.out.println(parent.returnval());
+	}
+ }
+()
+
+20
+30
+40
+0
+Q6 of 6
+Predict the output of the code given below.
+
+class Parent {
+
+	int num = 10;
+	
+	void printNum() {
+		System.out.println("num of A");
+	}
+ }
+ class Child extends Parent{
+	int num = 20;
+	
+	void printNum() {
+		System.out.println("num of B");
+	}
+ }
+ public class tester{
+	 public static void main(String[] args) {
+		Parent parent = new Child();
+		parent.printNum();
+		System.out.println(parent.num);
+	}
+}
+ 
+
+num of B 10
+num of A 10
+num of A 20
+num of B 20
+

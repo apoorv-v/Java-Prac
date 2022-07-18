@@ -1,0 +1,106 @@
+
+Properties and Logging Quiz - 1
+alarm
+  
+14m 48s
+Q1 of 4
+Consider this configuration.properties file:
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Assume that all the necessary configuration has been made, what will be the output if these statements are executed inside a main() method:
+
+Iterator<String> keys = config.getKeys();
+System.out.println(keys);
+A:
+
+                                               
+
+
+
+ 
+
+ 
+
+ 
+
+B:
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+C:
+
+
+
+ 
+
+
+
+A
+B
+C
+Q2 of 4
+Consider this configuration.properties file:
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Assume that all the necessary configuration has been made, what will be the output if this statement is executed inside a main() method:
+
+System.out.println(config.getProperty("value1") + config.getProperty("value2"));
+ 
+
+1020
+30
+Error: Because two objects cannot be added using the '+' operator
+Q3 of 4
+Select (3) the logger levels which can also cover the 'error' level:
+
+rootLogger.level=debug
+rootLogger.level=error
+rootLogger.level=fatal
+rootLogger.level=warn
+Q4 of 4
+What will be the output of this code if the corresponding key is not present in the properties file:
+
+System.out.println(config.getProperty("INVALID_PASSWORD"));
+ 
+
+NullPointerException
+null
+Compilation Error
+INVALID_PASSWORD
+

@@ -1,0 +1,165 @@
+
+		Day 1
+
+	-----------------------------Java basics-------------------------------
+
+
+Q1
+A float value of 30.0f can be assigned to a double variable ‘age’ without any need for type casting.
+A. True  #
+B. False
+
+Q2
+What is the output of below code ?
+
+
+public class Demo {
+	public static void main(String[] args) {
+		int numberOne=9;
+		float numberTwo = numberOne/2;
+		System.out.println(numberTwo);
+	}
+}
+
+
+4.0   #
+4.5
+Compilation Error: cannot convert from int to float.
+5
+
+
+
+Q3
+What is the output of the following code ?
+
+
+public class Demo {
+	public static void main(String args[]) {
+        int numA = 1, numB = -1;
+        switch(numA) {
+            case 0, 1: 
+                numB = 1;
+            case 2: 
+                numB = 2;
+            default:
+                numB = 0;
+        }
+        System.out.println("numB = " + numB);
+    }
+}
+ 
+
+numB = -1
+numB = 1
+numB = 0  #in jdk 14
+Compilation error due to case statements  # in jdk 11
+
+
+
+Q4
+What will be the output of the following code ?
+
+ 
+public class Demo {
+
+	public static void main(String[] args) {
+		int number = 11;
+		switch (11) { // Line 1
+		case 10 + 1:
+			System.out.println("Twelve"); // Line 2
+		case 0:
+			System.out.println("Zero");
+			break;
+		case (int) 12.0:
+			System.out.println("Decimal");
+			break;
+		default:
+			System.out.println("Default");
+		}
+	}
+}
+
+Twelve Zero   #
+Compilation Error Due to Double DataType
+Twelve
+Twelve Default
+
+
+
+Q5
+What will be the output in the following program ?
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int pointer = 0;
+		int value = 1;
+		while (true) {
+			++pointer;
+			if (pointer % 2 == 0)
+				continue;
+			else if (pointer % 5 == 0)
+				break;
+			value *= 3;
+			System.out.println(value);
+		}
+
+	}
+
+}
+
+
+Compilation error due to while condition
+3 9  #
+3 27
+The loop does not terminate
+
+
+
+
+Q6
+Predict the output of the following code.
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int num1 = 0;
+		int num2 = 0;
+		for (int var = 0; var < 5; var++) {
+			if ((++num1 > 2) && (++num2 > 2)) {
+				num1++;
+			}
+		}
+		System.out.println(num1 + " and " + num2);
+	}
+}
+
+
+5 and 2
+8 and 5
+6 and 3   #
+6 and 4
+
+
+Q7
+Predict the output of the following code.
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int num1 = 0, num2 = 9;
+		do {
+			num1++;
+			if (num2-- < num1++) {
+				break;
+			}
+		} while (num1 < 5);
+		System.out.println(num1 + "" + num2);
+	}
+
+}
+
+65 
+66
+55
+56 

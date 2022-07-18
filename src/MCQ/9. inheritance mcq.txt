@@ -1,0 +1,150 @@
+Q1 of 5
+How can a child class B call a parent class A's constructor having no parameters?
+
+super(void);
+super.A();
+super()  #
+A();
+Q2 of 5
+Predict the output of the following code:
+
+class Employee{
+	Employee() {
+		System.out.println("Constructor Employee");
+	}
+	
+	void display() {
+		System.out.println("Inside Employee Class");
+	}
+}
+
+class PermanentEmployee extends Employee{
+	 PermanentEmployee() {
+		 System.out.println("Constructor Permanent Employee");
+	}
+	void display() {
+		System.out.println("Inside Permanent Employee Class");
+	}
+}
+
+public class Tester {
+	public static void main(String[] args) {
+		Employee emp = new PermanentEmployee();
+		emp.display();
+	}
+}
+ 
+
+Constructor Employee ; Inside Employee Class ; Constructor Permanent Employee
+Constructor Employee ; Constructor Permanent Employee ; Inside Permanent Employee Class  #
+Constructor Permanent Employee ; Inside Permanent Employee Class
+Constructor Employee ; Inside Employee Class
+Q3 of 5
+In the constructor of DigitalCamera class, the call to the base class constructor  ____________.
+
+class Camera {
+	private String brand;
+	private int cost;
+
+	Camera() {
+		this.brand = "Nikon";
+	}
+
+	Camera(String brand, int cost) {
+		this.brand = brand;
+		this.cost = cost;
+	}
+}
+
+public class DigitalCamera extends Camera {
+	private int memory;
+
+	DigitalCamera(String brand, int cost) {
+		this.memory = 16;
+	}
+
+	public static void main(String[] args) {
+		DigitalCamera Camera = new DigitalCamera("Canon", 100);
+	}
+}
+ 
+
+can be made anywhere in the constructor   #
+must be the first line of the constructor
+Q4 of 5
+What will be the output of the following code snippet?
+
+class Student {
+    Student() {
+        System.out.println("Request for loan");
+    }
+}
+class GraduateStudent extends Student {
+    public static void main(String args[]){
+        GraduateStudent obh=new GraduateStudent();
+    }
+}
+ 
+
+Executes successfully, with no output displayed
+Request for loan  #
+Compilation error, as child class should also have constructor.
+Q5 of 5
+Predict the output of the following code:
+
+package inheritance_quiz;
+
+class First {
+	private int var1 = 10;
+	private int var2;
+
+	First(int var2) {
+		this.var2 = var2;
+	}
+
+	public int getVar1() {
+		return var1;
+	}
+
+	public void setVar1(int var1) {
+		this.var1 = var1;
+	}
+
+	public int getVar2() {
+		return var2;
+	}
+
+	public void setVar2(int var2) {
+		this.var2 = var2;
+	}
+}
+
+class Second extends First {
+	private int var3;
+
+	Second(int var2, int var3) {
+		super(var2);
+		this.var3 = 40; // line 33
+	}
+
+	public int add() {
+		int sum;
+		sum = getVar1() + getVar2() + var3;
+		System.out.println("Result: " + sum);
+		return sum;
+	}
+}
+
+public class Tester {
+	public static void main(String[] args) {
+		First obj = new Second(20, 30);
+		((Second) obj).add();
+	}
+}
+ 
+
+Result: 70
+Result: 60
+Error at line 33: ambiguity in assigning values
+Result: 50
+

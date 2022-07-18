@@ -1,0 +1,18 @@
+Q1 of 2
+While overriding the equals() method, which another method should be overridden?
+
+hashCode()
+compareTo()
+toString()
+Q2 of 2
+Consider this method:
+
+public static void show(Object obj) 
+{ 
+    System.out.println(obj); 
+}
+Values of which of the following types can be passed to the above method?
+
+String
+int
+boolean
